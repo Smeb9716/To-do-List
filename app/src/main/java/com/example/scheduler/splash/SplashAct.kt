@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.scheduler.MainAct
 import com.example.scheduler.R
+import com.example.scheduler.base.DataManager
 import com.example.scheduler.base.PreferManager
 import com.example.scheduler.overview.OverviewAct
 
@@ -16,6 +17,9 @@ class SplashAct : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Change color statusBar
+        DataManager.getInstance()!!.getStatusBarColor(this, window, R.color.color_background_app)
         setContentView(R.layout.act_splash)
 
         val preferManager = PreferManager.getInstance(this)
